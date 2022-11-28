@@ -3,11 +3,12 @@ function connect_database(){
     $hostName = "localhost";
     $userName = "root";
     $password = "Thanhvaviet!!";
-    $dbName = "webdev";
+    $dbName = "company-hr";
     $conn = mysqli_connect($hostName, $userName, $password, $dbName);
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
       }
+    return $conn;
 }
 ?>
