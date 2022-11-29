@@ -13,7 +13,6 @@
 
 </html>
 <body>
-</body>
   <div class="bg-white mx-5">
       <div class="row">
         <div class="col-sm-5 px-auto mx-auto text-black">
@@ -23,18 +22,18 @@
           </div>
 
           <div class="d-flex align-items-center ps-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-            <form style="width: 23rem;" action="backend/test.php" method="post">
+            <form style="width: 23rem;" action="backend/login_authentication.php" method="post">
 
               <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h1>
 
               <div class="form-outline mb-4">
                 <label class="form-label fs-4" for="email">Email address:</label><br>
-                <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email..."/>
+                <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email..." required/>
               </div>
 
               <div class="form-group mb-4">
                 <label class="form-label fs-4" for="password">Password:</label>
-                <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Enter your password..."/>
+                <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Enter your password..." required/>
                 <input type="checkbox" class="checkbox mt-2" onclick="togglePassword()" style="cursor: pointer; width: 20px; height: 20px;">
                 <label class="form-label fs-6" for="password">Show password</label>
               </div>
@@ -49,10 +48,13 @@
         </div>
         <div class="col-sm-6 d-flex flex-wrap align-items-center">
           <img src="login-img.png" alt="Login image"
-            class="img-fluid mx-auto d-block"">
+            class="img-fluid mx-auto d-block">
         </div>
       </div>
     </div>
+</body>
+
+
 <script>
 function togglePassword() {
   var x = document.getElementById("password");
