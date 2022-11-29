@@ -14,7 +14,10 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Name</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Start Date</th>
+              <th>End Date</th>
               <th class="no-sort"></th>
             </tr>
           </thead>
@@ -28,14 +31,17 @@
           if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
           }
-          $sql = "SELECT * FROM products";
+          $sql = "SELECT * FROM projects";
           $result = $conn->query($sql); 
           $conn->close();
           foreach ($result as $a) {
             ?>
               <tr>
-                <td><?php echo $a['product_id'] ?></td>
-                <td><?php echo $a['product_name'] ?></td>
+                <td><?php echo $a['project_id'] ?></td>
+                <td><?php echo $a['project_title'] ?></td>
+                <td><?php echo $a['project_status'] ?></td>
+                <td><?php echo $a['project_start'] ?></td>
+                <td><?php echo $a['project_end'] ?></td>
                 <td>
                 </td>
               </tr>

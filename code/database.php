@@ -23,9 +23,12 @@ $conn->close();
                die("Connection failed: " . $conn->connect_error);
          }
   
-         $sql = "CREATE TABLE products (
-             product_id INT(6) AUTO_INCREMENT PRIMARY KEY,
-             product_name VARCHAR(15) NOT NULL
+         $sql = "CREATE TABLE projects (
+             project_id INT(6) AUTO_INCREMENT PRIMARY KEY,
+             project_title VARCHAR(15) NOT NULL,
+             project_status VARCHAR(100) NOT NULL,
+             project_start DATE,
+             project_end DATE
          )";
   
          if ($conn->query($sql) === TRUE) {
@@ -36,7 +39,7 @@ $conn->close();
  if ($conn->connect_error){
        die("Connection failed: " . $conn->connect_error);
  }
- $sql = "INSERT INTO products (product_name) VALUES ('hot americano'),('iced americano')";  
+ $sql = "INSERT INTO projects (project_title,project_status,project_start,project_end) VALUES ('hot americano','disabled','2022-11-29','2022-11-29'),('iced americano','disabled','2022-11-29','2022-11-29')";  
 
  if (($conn->query($sql) === TRUE)) {
        echo "Data has been inserted successfully!";
