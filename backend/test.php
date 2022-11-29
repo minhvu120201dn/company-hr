@@ -24,10 +24,13 @@ if (isset($_POST["login"])){
 }
 
 $conn = connect_database();
-$sql = "SELECT * FROM users WHERE username = '$email' AND password = '$password' ";
+$sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password' ";
 $result = mysqli_query($conn, $sql);
 
 if ($result->num_rows == 0){
     echo "No user found";
+}
+else {
+    echo "user connected. mail: $email password: $password";
 }
 ?>

@@ -1,70 +1,58 @@
-<!-- <body>
-    <div class="panel-body">
-        <form action="backend/test.php" method="post">
-        <div class="form-group">
-            <label for="email">Email:</label><br>
-            <input type="text" name="email" placeholder="Enter your email..."><br><br>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label><br>
-            <input type="password" name="password" id="password" placeholder="Enter your password...">
-            <i class="far fa-eye" onclick="togglePassword()" style="margin-left: -30px; cursor: pointer;"></i><br><br>
-        </div>
-            <button type="submit" class="btn btn-secondary btn-md btn-block" name="login"> Log in </button>
-        </form>
-    </div>
-</body> -->
-  <!--Section: Section #5-->
-  <section id="section-5">
-    <!--Section: Demo-->
-    <section class="pb-4">
-  <div class="bg-white border rounded-5">
-    
-    <section class="w-100">
-      <div class="row">
-        <div class="col-sm-5 text-black">
 
-          <div class="px-5 ms-xl-4">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Company-HR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+</html>
+<body>
+</body>
+  <div class="bg-white mx-5">
+      <div class="row">
+        <div class="col-sm-5 px-auto mx-auto text-black">
+          <div class="ps-5 ms-xl-4">
             <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-0" style="color: #709085;"></i>
             <span class="h1 fw-bold mb-0">Web Dev</span>
           </div>
 
-          <div class="d-flex align-items-center px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-
+          <div class="d-flex align-items-center ps-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
             <form style="width: 23rem;" action="backend/test.php" method="post">
 
-              <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+              <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h1>
 
               <div class="form-outline mb-4">
+                <label class="form-label fs-4" for="email">Email address:</label><br>
                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email..."/>
-                <label class="form-label" for="email">Email address:</label><br>
               </div>
 
               <div class="form-group mb-4">
-              
+                <label class="form-label fs-4" for="password">Password:</label>
                 <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Enter your password..."/>
-                <i class="far fa-eye" onclick="togglePassword()" style="cursor: pointer;"></i>
-                <label class="form-label" for="password">Password:</label>
+                <input type="checkbox" class="checkbox mt-2" onclick="togglePassword()" style="cursor: pointer; width: 20px; height: 20px;">
+                <label class="form-label fs-6" for="password">Show password</label>
               </div>
 
               <div class="pt-1 mb-4">
-                <button type="submit" class="btn btn-info btn-lg btn-block" type="button" name="login">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" type="button" name="login">Login</button>
               </div>
 
-              <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-              <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
-
+              <div class="large mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></div>
             </form>
           </div>
         </div>
-        <div class="col-sm-7 px-0 d-none d-sm-block">
+        <div class="col-sm-6 d-flex flex-wrap align-items-center">
           <img src="login-img.png" alt="Login image"
-            class="img-fluid" style="object-fit: cover; object-position: right;">
+            class="img-fluid mx-auto d-block"">
         </div>
       </div>
-    </section>
-  </div>
-</section>
+    </div>
 <script>
 function togglePassword() {
   var x = document.getElementById("password");
