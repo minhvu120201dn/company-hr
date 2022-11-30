@@ -45,6 +45,9 @@
                 <td><?php echo $a['project_start'] ?></td>
                 <td><?php echo $a['project_end'] ?></td>
                 <td>
+                  <a class="fa fa-eye btn btn-info btn-sm" href=""></a>
+                  <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
+                  <a class="fa fa-trash btn btn-danger btn-sm" href="code/projects_processing.php?id=<?php echo $a['project_id'] ?>"></a>
                 </td>
               </tr>
             <?php 
