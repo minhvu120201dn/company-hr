@@ -5,19 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin</title>
     <link rel="stylesheet" href="./admin/dataTables.bootstrap.css">
     <link rel="stylesheet" href="./admin/dt-sidebar.css">
     <link rel="stylesheet" href="./admin/dt-gradients.css">
     <link rel="stylesheet" href="./admin/dt-theme.css">
     <link rel="stylesheet" href="./admin/dt-styles.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <script src="./js/jquery-3.2.1.js"></script>
+
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables_themeroller.css">
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/jquery.dataTables.js"></script>
     <script src="./js/dataTables.bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+   
+    
+
     
 </head>
 
@@ -38,8 +44,6 @@
     </div>
   </div>
 
-  <script src="/js/admin/simple-sidebar.js"></script>
-  <script src="/js/admin/plugins.js"></script>
 
 </body>
 </html>

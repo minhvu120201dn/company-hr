@@ -1,14 +1,14 @@
 <script type="text/javascript">
-  document.title = 'Projects';
+  document.title = 'Tasks';
 </script> 
 <div class="col-lg-12">
 <div class="row">
   <div class="col-lg-12">
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
-        <h1>Projects</h1>
+        <h1>Tasks</h1>
           <a href="/" class="btn btn-success">Create</a>
-          <a href="?page=tasks" class="btn btn-success">Tasks</a>
+          <a href="?page=projects" class="btn btn-success">Projects</a>
           <a href="?page=fields" class="btn btn-success">Fields</a>
       </header>
       <div class="panel-body">

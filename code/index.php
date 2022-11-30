@@ -7,8 +7,14 @@
         switch($_GET['page'])
         {
             case 'projects':
-                include('./pages/home.php');
-                break;  
+                include('./projects.php');
+                break;
+            case 'tasks':
+                include('./tasks.php');
+                break;   
+            case 'fields':
+                include('./fields.php');
+                break;   
         }
     }
 ?>
