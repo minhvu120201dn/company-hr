@@ -7693,7 +7693,6 @@ button.close {
 .pager:after,
 .panel-body:before,
 .panel-body:after,
-.modal-header:before,
 .modal-header:after,
 .modal-footer:before,
 .modal-footer:after {
@@ -7719,7 +7718,13 @@ button.close {
 .modal-footer:after {
     clear: both;
 }
-
+.modal-header:before {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 .center-block {
     display: block;
     margin-left: auto;
