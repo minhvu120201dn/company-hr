@@ -68,7 +68,6 @@
         <table id="service_table" class="display">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Title</th>
               <th>Status</th>
               <th>Start Date</th>
@@ -92,7 +91,7 @@
           foreach ($result as $a) {
             ?>
               <tr>
-                <td><?php echo $a['project_id'] ?></td>
+          
                 <td><?php echo $a['project_title'] ?></td>
                 <td><?php echo $a['project_status'] ?></td>
                 <td><?php echo $a['project_start'] ?></td>
@@ -116,7 +115,7 @@
             {
     "order": [],
     "aoColumnDefs": [
-      { "bSortable": false, "aTargets": [ 0,5 ] }
+      { "bSortable": false, "aTargets": [ 4 ] }
     ]
             }
           );
