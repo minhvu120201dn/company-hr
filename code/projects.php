@@ -22,15 +22,15 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Project Title</label>
-                          <input type="text" name="protitle" class="form-control" id="recipient-name1" minlength="8" maxlength="250" placeholder="">
+                          <input type="text" name="protitle" class="form-control" id="recipient-name1" minlength="8" maxlength="250" placeholder="" required oninvalid="this.setCustomValidity('Please enter project title')" oninput="this.setCustomValidity('')">
                       </div>
                       <div class="form-group">
                         <label class="control-label">Project Start Date</label>
-                          <input type="text" name="startdate" class="form-control datepicker" id="recipient-name1" placeholder="">
+                          <input type="text" name="startdate" class="form-control datepicker" id="recipient-name1" placeholder="" required oninvalid="this.setCustomValidity('Please enter a date')" oninput="this.setCustomValidity('')">
                       </div>
                       <div class="form-group">
                         <label class="control-label">Project End Date</label>
-                          <input type="text" name="enddate" class="form-control datepicker" id="recipient-name1" required="" placeholder="">
+                          <input type="text" name="enddate" class="form-control datepicker" id="recipient-name1" required placeholder="" oninvalid="this.setCustomValidity('Please enter a date')" oninput="this.setCustomValidity('')">
                         </div>
                       <div class="form-group">
                         <label for="message-text" class="control-label">Summery</label>
@@ -44,7 +44,7 @@
                       </div>
                       <div class="form-group">
                         <label class="control-label">Status</label>
-                          <select class="form-control custom-select valid" data-placeholder="Choose a Category" tabindex="1" name="prostatus" required="">
+                          <select class="form-control custom-select valid" data-placeholder="Choose a Category" tabindex="1" name="prostatus" required>
                             <option value="upcoming">Upcoming</option>
                             <option value="complete">Complete</option>
                             <option value="running">Running</option>
