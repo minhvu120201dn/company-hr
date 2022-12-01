@@ -32,16 +32,18 @@ CREATE TABLE `projects` (
   `project_title` varchar(15) NOT NULL,
   `project_status` varchar(100) NOT NULL,
   `project_start` date DEFAULT NULL,
-  `project_end` date DEFAULT NULL
+  `project_end` date DEFAULT NULL,
+  `project_details` varchar(100) DEFAULT NULL,
+  `project_summary` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`project_id`, `project_title`, `project_status`, `project_start`, `project_end`) VALUES
-(1, 'hot americano', 'disabled', '2022-11-29', '2022-11-29'),
-(2, 'iced americano', 'disabled', '2022-11-29', '2022-11-29');
+INSERT INTO `projects` (`project_id`, `project_title`, `project_status`, `project_start`, `project_end`,`project_details`,`project_summary`) VALUES
+(1, 'hot americano', 'disabled', '2022-11-29', '2022-11-29','',''),
+(2, 'iced americano', 'disabled', '2022-11-29', '2022-11-29','','');
 
 --
 -- Indexes for dumped tables
@@ -61,9 +63,11 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
+  MODIFY `project_id` int(6) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `projects`
+AUTO_INCREMENT = 0;
+COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
