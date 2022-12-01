@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php
-        include "header.php";
+        include "new-header.php";
     ?>
 
     <script src="script.js"></script>
