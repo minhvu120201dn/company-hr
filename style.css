@@ -1,16 +1,9 @@
 #sidebar {
-    overflow-x: hidden;
-    /* height: 100%; 
-    width: 200px; 
-    position: fixed;
-    z-index: 1; 
-    top: 0;
-    left: 0;
-     
-    transition: 0.5s;  */
-}  
+    overflow-x: hidden; /* Disable horizontal scroll */
+    width: 200px;
+}
 
 a.nav-link.text-white {
     font-size: 20px;
-    /* display: block; */
+    display: block;
 }
