@@ -1,9 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = 'company-hr';
-$conn = new mysqli($servername, $username, $password, $dbname);
+
+$conn = connect_to_database();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -23,14 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     
-}
-else{
-    $id = $_GET['id'];
-    $sql = "DELETE FROM projects WHERE project_id='$id'";
-
-    if ($conn->query($sql) === TRUE) {
-        header("Location: ./index.php");
-    }
 }
 $conn->close();
 ?>

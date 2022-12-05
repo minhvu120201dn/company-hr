@@ -38,9 +38,9 @@
         <li><button class="btn btn-dark py-2" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
             <i class="fa-solid fa-bars"></i>
         </button></li>
-        <li><a href="#" class="nav-link text-white">Home</a></li>
+        <!-- <li><a href="#" class="nav-link text-white">Home</a></li>
         <li><a href="#" class="nav-link text-white">Features</a></li>
-        <li><a href="#" class="nav-link text-white">About</a></li>
+        <li><a href="#" class="nav-link text-white">About</a></li> -->
     </ul>
 
     <div class="col-sm-3 text-end dropdown">
