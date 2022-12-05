@@ -9,7 +9,7 @@
           </div>
 
           <div class="d-flex align-items-center ps-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-            <form style="width: 23rem;" action="./login/login_authentication.php" method="post">
+            <form style="width: 23rem;" action="../login/login_authentication.php" method="post">
 
               <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h1>
 
