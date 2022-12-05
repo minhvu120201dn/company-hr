@@ -2,14 +2,14 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = 'webpr1';
+    $dbname = 'company-hr';
 /////   CREATE DATABASE     /////
 $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
       
-$sql = "CREATE DATABASE webpr1";
+$sql = "CREATE DATABASE company-hr";
 if ($conn->query($sql) === TRUE) {
     echo "Database has been created successfully <br>";
 } else {
