@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,43 +30,11 @@
     <script type="text/javascript" charset="utf8" src="./js/jquery.dataTables.js"></script>   
 
     <title>
-    <?php
-        if (!isset($_GET["page"])) {
-            echo "Project";
-        }
-        else {
-            echo $_GET["page"];
-        }
-    ?>
+   
     </title>
 </head>
 <body>
-    <?php
-    include "../header.php";
-    ?>
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <?php
-            if(!isset($_GET['page'])){
-                include('./projects.php');
-            }
-            else{
-                switch($_GET['page'])
-                {
-                    case 'projects':
-                        include('./projects.php');
-                        break;
-                    case 'tasks':
-                        include('./tasks.php');
-                        break;   
-                    case 'fields':
-                        include('./fields.php');
-                        break;
-                }
-            }
-            ?>
-        </div>
-    </div>
+    
 
     <script src="../script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
