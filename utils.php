@@ -15,4 +15,10 @@ function all_requirements_are_set($requirements) {
     }
     return true;
 }
+
+$conn = connect_to_database();
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 ?>
+
