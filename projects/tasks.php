@@ -1,13 +1,13 @@
 <script type="text/javascript">
-  document.title = 'Projects';
+  document.title = 'Tasks';
 </script> 
 <div class="col-lg-12">
 <div class="row">
   <div class="col-lg-12">
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
-        <h1>Projects</h1>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
+        <h1>Tasks</h1>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" style="display: none;">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -22,15 +22,15 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="control-label">Project Title</label>
-                          <input type="text" name="protitle" class="form-control" id="recipient-name1" minlength="8" maxlength="250" placeholder="" required oninvalid="this.setCustomValidity('Please enter project title')" oninput="this.setCustomValidity('')">
+                          <input type="text" name="protitle" class="form-control" id="recipient-name1" minlength="8" maxlength="250" placeholder="">
                       </div>
                       <div class="form-group">
                         <label class="control-label">Project Start Date</label>
-                          <input type="text" name="startdate" class="form-control datepicker" id="recipient-name1" placeholder="" required oninvalid="this.setCustomValidity('Please enter a date')" oninput="this.setCustomValidity('')">
+                          <input type="text" name="startdate" class="form-control datepicker" id="recipient-name1" placeholder="">
                       </div>
                       <div class="form-group">
                         <label class="control-label">Project End Date</label>
-                          <input type="text" name="enddate" class="form-control datepicker" id="recipient-name1" required placeholder="" oninvalid="this.setCustomValidity('Please enter a date')" oninput="this.setCustomValidity('')">
+                          <input type="text" name="enddate" class="form-control datepicker" id="recipient-name1" required="" placeholder="">
                         </div>
                       <div class="form-group">
                         <label for="message-text" class="control-label">Summery</label>
@@ -44,7 +44,7 @@
                       </div>
                       <div class="form-group">
                         <label class="control-label">Status</label>
-                          <select class="form-control custom-select valid" data-placeholder="Choose a Category" tabindex="1" name="prostatus" required>
+                          <select class="form-control custom-select valid" data-placeholder="Choose a Category" tabindex="1" name="prostatus" required="">
                             <option value="upcoming">Upcoming</option>
                             <option value="complete">Complete</option>
                             <option value="running">Running</option>
@@ -61,7 +61,7 @@
               </div>
             </div>
           </div>
-          <a href="?page=tasks" class="btn btn-success">Tasks</a>
+          <a href="?page=projects" class="btn btn-success">Projects</a>
           <a href="?page=fields" class="btn btn-success">Fields</a>
       </header>
       <div class="panel-body">
@@ -80,7 +80,7 @@
           $servername = "localhost";
           $username = "root";
           $password = "";
-          $dbname = 'webpr1';
+          $dbname = 'company-hr';
           $conn = new mysqli($servername, $username, $password, $dbname);
           if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
@@ -91,7 +91,6 @@
           foreach ($result as $a) {
             ?>
               <tr>
-          
                 <td><?php echo $a['project_title'] ?></td>
                 <td><?php echo $a['project_status'] ?></td>
                 <td><?php echo $a['project_start'] ?></td>

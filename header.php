@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
+                    <a href="employees" class="nav-link text-white">
                         <i class="fa-solid fa-users"></i>
                         Employees
                     </a>
@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
+                    <a href="projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
                     </a>
