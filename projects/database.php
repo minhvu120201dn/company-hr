@@ -1,10 +1,6 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = 'company-hr';
 /////   CREATE DATABASE     /////
-$conn = new mysqli($servername, $username, $password);
+$conn = connect_to_database();
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
 }
