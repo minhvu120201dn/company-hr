@@ -1,6 +1,7 @@
 <?php
 include "../utils.php";
 
+
 function test_input($data){
     $data = trim($data);
     $data = stripslashes($data);
@@ -10,16 +11,24 @@ function test_input($data){
 
 $email = test_input($_POST["email"]);
 $password = test_input($_POST["password"]);
-$password = password_hash($password, PASSWORD_DEFAULT);
 
-$conn = connect_to_database();
-$sql = "SELECT * FROM employees WHERE email = '$email' AND password = '$password' ";
-$result = mysqli_query($conn, $sql);
 
-if ($result->num_rows === 0){
+$sql = "SELECT password FROM employees WHERE email = '$email'";
+$result = $conn->query($sql);
+
+if ($result->num_rows == 0){
     echo "No user found. mail: $email password: $password";
 }
 else {
-    echo "user connected. mail: $email password: $password";
+    $user = $result->fetch_assoc();
+    if (!password_verify($password, $user["password"])){
+        echo "wrong password. mail: $email password: $password";
+    }
+    else {
+        session_start();
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $email;
+        header('Location: ./../header.php');
+    }
 }
 ?>
