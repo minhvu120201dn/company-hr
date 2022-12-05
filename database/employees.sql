@@ -12,5 +12,6 @@ CREATE TABLE employees(
     notes TEXT DEFAULT NULL
 );
 
+/* email: admin@gmail.com password: admin */
 INSERT INTO employees
 VALUES ('admin@gmail.com', '$2y$10$Ttm.9G8PJ2DhDVAyzDsnh.zihfpTej9KQtBlMGzb4.03F8opNF7MS', 'admin', 'admin', 'admin', NULL, '2022-1-1', 'admin', 'admin', '1234567890', NULL);

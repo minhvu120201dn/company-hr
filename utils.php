@@ -2,7 +2,7 @@
 function connect_to_database() {
     $servername = "localhost";
     $username = "root";
-    $password = "Thanhvaviet!!";
+    $password = "";
     $db_name = "company-hr";
     return new mysqli($servername, $username, $password, $db_name);
 }
@@ -15,10 +15,4 @@ function all_requirements_are_set($requirements) {
     }
     return true;
 }
-
-$conn = connect_to_database();
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
 ?>
-
