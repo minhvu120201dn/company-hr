@@ -33,7 +33,7 @@
                           <input type="text" name="enddate" class="form-control datepicker" id="recipient-name1" required placeholder="" oninvalid="this.setCustomValidity('Please enter a date')" oninput="this.setCustomValidity('')">
                         </div>
                       <div class="form-group">
-                        <label for="message-text" class="control-label">Summery</label>
+                        <label for="message-text" class="control-label">Summary</label>
                           <textarea class="form-control" name="summery" id="message-text1" placeholder="" style="resize: none;"></textarea>
                       </div>
                     </div>
@@ -80,7 +80,7 @@
           $servername = "localhost";
           $username = "root";
           $password = "";
-          $dbname = 'webpr1';
+          $dbname = 'company-hr';
           $conn = new mysqli($servername, $username, $password, $dbname);
           if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
