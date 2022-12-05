@@ -115,8 +115,11 @@
             {
     "order": [],
     "aoColumnDefs": [
-      { "bSortable": false, "aTargets": [ 4 ] }
-    ]
+      { "bSortable": false, "aTargets": [ 4 ] ,
+         "sWidth": "111px", "aTargets": [4] 
+      }
+
+    ],
             }
           );
         });
