@@ -11,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $title = $_POST['protitle'];
         $startdate = $_POST['startdate'];
         $enddate = $_POST['enddate'];
-        $summery = $_POST['summery']?$_POST['summery']:'';
-        $details = $_POST['details']?$_POST['details']:'';
+        $summery = $_POST['summery'];
+        $details = $_POST['details'];
         $status = $_POST['prostatus'];
         $sql = "UPDATE projects SET project_title='$title',project_summary='$summery' WHERE project_id='$id'";
 
