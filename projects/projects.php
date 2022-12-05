@@ -1,3 +1,7 @@
+<?php
+    include "../index.php";
+    include "./header.php";
+    ?>
 <script type="text/javascript">
   document.title = 'Projects';
 </script> 
@@ -16,7 +20,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left:75%;">
                     <span aria-hidden="true">&times;</span></button>
               </div>
-              <form method="post" action="./projects_processing.php" id="btnSubmit" enctype="multipart/form-data">
+              <form method="post" action="./create_projects.php" id="btnSubmit" enctype="multipart/form-data">
                 <div class="modal-body">
                   <div class="row">
                     <div class="col-md-6">
@@ -97,9 +101,9 @@
                 <td><?php echo $a['project_start'] ?></td>
                 <td><?php echo $a['project_end'] ?></td>
                 <td>
-                  <a class="fa fa-eye btn btn-info btn-sm" href=""></a>
+                  <a class="fa fa-eye btn btn-info btn-sm" href="details_projects.php?id=<?php echo $a['project_id'] ?>"></a>
                   <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
-                  <a class="fa fa-trash btn btn-danger btn-sm" href="projects_processing.php?id=<?php echo $a['project_id'] ?>"></a>
+                  <a class="fa fa-trash btn btn-danger btn-sm" href="delete_projects.php?id=<?php echo $a['project_id'] ?>"></a>
                 </td>
           
               </tr>

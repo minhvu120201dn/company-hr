@@ -26,7 +26,7 @@
 
             </li>
                 <li>
-                    <a href="projects" class="nav-link text-white">
+                    <a href="./projects.php" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
                     </a>

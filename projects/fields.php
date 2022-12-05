@@ -1,3 +1,7 @@
+<?php
+    include "../index.php";
+    include "./header.php";
+    ?>
 <script type="text/javascript">
   document.title = 'Fields';
 </script> 
