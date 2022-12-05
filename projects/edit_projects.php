@@ -29,7 +29,8 @@ if ($conn->connect_error) {
           $conn->close();
           foreach ($result as $a) {
             ?>
-    <form method="post" action="./edit_processing.php?id=<?php echo $a['project_id'] ?>" id="btnSubmit" enctype="multipart/form-data">
+    <form method="post" action="./edit_processing.php?id=<?php echo $a['project_id'] ?>" >
+        <dt >Id</dt><dd><?php echo $id ?></dd>
           <dt style="margin-top: 6px;">Name</dt><dd><input type="text" name="protitle" class="form-control" id="recipient-name1" minlength="8" maxlength="250" value="<?php echo $a['project_title'] ?>" ></dd>
           <dt style="margin-top: 6px;">Status</dt><dd><select class="form-control custom-select valid" tabindex="1" name="prostatus">
                             <option value="upcoming">Upcoming</option>
@@ -42,7 +43,7 @@ if ($conn->connect_error) {
           <dt style="margin-top: 6px;">Summary</dt><dd><textarea class="form-control" name="summery" id="message-text1" maxlength="1300"  style="resize: none;"><?php echo $a['project_summary'] ? $a['project_summary'] : 'Null' ?></textarea></dd>
           <div class="form-row" style="margin-left: 350px; margin-top: 30px">
             <div class="col-md-4">
-              <button type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i> Update</button>
+              <button name="submit" type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i> Update</button>
     </form>   
             </div>
           </div>
