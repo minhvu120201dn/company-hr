@@ -11,8 +11,10 @@
                         <i class="fa-solid fa-chart-line"></i>
                         Dashboard
                     </a>
-                
-                    <a href="#" class="nav-link text-white">
+
+                </li>
+                <li>
+                    <a href="employees" class="nav-link text-white">
                         <i class="fa-solid fa-users"></i>
                         Employees
                     </a>
@@ -21,8 +23,10 @@
                         <i class="fa-solid fa-building"></i>
                         Department
                     </a>
-                
-                    <a href="#" class="nav-link text-white">
+
+            </li>
+                <li>
+                    <a href="projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
                     </a>
