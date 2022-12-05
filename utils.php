@@ -2,7 +2,7 @@
 function connect_to_database() {
     $servername = "localhost";
     $username = "root";
-    $password = "Thanhvaviet!!";
+    $password = "";
     $db_name = "company-hr";
     return new mysqli($servername, $username, $password, $db_name);
 }

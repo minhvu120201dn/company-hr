@@ -1,5 +1,6 @@
 <?php
     include "../index.php";
+    include "../utils.php";
     include "./header.php";
     ?>
 <script type="text/javascript">
