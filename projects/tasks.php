@@ -150,7 +150,7 @@
                 <td>
                   <a class="fa fa-eye btn btn-info btn-sm" href=""></a>
                   <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
-                  <a class="fa fa-trash btn btn-danger btn-sm" href=""></a>
+                  <a class="fa fa-trash btn btn-danger btn-sm" href="delete_tasks.php?id=<?php echo $a['id'] ?>"></a>
                 </td>
           
               </tr>
