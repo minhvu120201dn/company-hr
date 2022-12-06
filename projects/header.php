@@ -26,6 +26,8 @@
     <script src="./public/js/dataTables.bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="./public/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="./public/js/jquery.dataTables.js"></script>  
+    <link rel="stylesheet" type="text/css" href="./public/css/select2.min.css">
+    <script type="text/javascript" charset="utf8" src="./public/js/select2.full.min.js"></script>  
 
 
 

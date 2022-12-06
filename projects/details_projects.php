@@ -1,10 +1,11 @@
 <?php
     include "./header.php";
     include "../utils.php";
+    include "../header.php";
     ?>
 <script type="text/javascript">
   document.title = 'Project Detail';
-</script> 
+</script>
 <div class="row">
   <div class="col-lg-6">
     <section class="panel" style="box-shadow: none;">
@@ -15,11 +16,7 @@
       <div class="panel-body">
         <dl class="dl-horizontal">
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $db_name = "company-hr";
-$conn = new mysqli($servername, $username, $password, $db_name);
+        $conn = connect_to_database();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
