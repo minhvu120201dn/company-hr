@@ -1,7 +1,5 @@
 <?php
 include "../utils.php";
-
-
 function test_input($data){
     $data = trim($data);
     $data = stripslashes($data);
@@ -28,7 +26,7 @@ else {
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $email;
-        header('Location: ./../header.php');
+        header('Location: ./../index.php');
     }
 }
 ?>

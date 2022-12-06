@@ -18,8 +18,9 @@
 </head>
 <body>
     <?php
-        include './utils.php';
+        session_start();
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            include './utils.php';
             include "header.php";
             include "dashboard.php";
         }
