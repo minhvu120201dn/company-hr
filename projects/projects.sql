@@ -33,8 +33,8 @@ CREATE TABLE `projects` (
   `project_status` varchar(100) NOT NULL,
   `project_start` date DEFAULT NULL,
   `project_end` date DEFAULT NULL,
-  `project_details` varchar(100) DEFAULT '',
-  `project_summary` varchar(100) DEFAULT ''
+  `project_details` varchar(100) DEFAULT NULL,
+  `project_summary` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
