@@ -1,4 +1,3 @@
-div class="container-fluid px-0">
     <div class="offcanvas offcanvas-start offcanvas-sm bg-dark" id="sidebar">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title text-white">Sidebar</h1>
