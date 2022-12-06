@@ -16,8 +16,8 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
               <div class="modal-header" style="display: flex;justify-content: space-between;position: relative;align-items: center;">
-                  <h4 class="modal-title" id="exampleModalLabel1" style="font-weight:700;font-size:20px;"> Add Project</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left:75%;">
+                  <h4 class="modal-title" id="exampleModalLabel1" style="font-weight:700;font-size:20px; width:120px;"> Add Project</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left:70%;">
                     <span aria-hidden="true">&times;</span></button>
               </div>
               <form method="post" action="./create_projects.php" id="btnSubmit" enctype="multipart/form-data">
@@ -38,13 +38,13 @@
                         </div>
                       <div class="form-group">
                         <label for="message-text" class="control-label">Summary</label>
-                          <textarea class="form-control" name="summery" id="message-text1" placeholder="" style="resize: none;"></textarea>
+                          <textarea class="form-control" name="summery" id="message-text1" maxlength="1300" placeholder="" style="resize: none;"></textarea>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="form-group">
+                    <div class="form-group">
                         <label for="message-text" class="control-label">Details</label>
-                          <textarea class="form-control" name="details" id="message-text1" minlength="10" maxlength="1300" rows="8" placeholder="" style="resize: none;"> </textarea>
+                          <textarea class="form-control" name="details" id="message-text1" maxlength="1300" placeholder="" style="resize: none;"></textarea>
                       </div>
                       <div class="form-group">
                         <label class="control-label">Status</label>
@@ -98,7 +98,7 @@
                 <td><?php echo $a['project_end'] ?></td>
                 <td>
                   <a class="fa fa-eye btn btn-info btn-sm" href="details_projects.php?id=<?php echo $a['project_id'] ?>"></a>
-                  <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
+                  <a class="fa fa-pencil btn btn-warning btn-sm" href="edit_projects.php?id=<?php echo $a['project_id'] ?>"></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="delete_projects.php?id=<?php echo $a['project_id'] ?>"></a>
                 </td>
           
@@ -115,8 +115,11 @@
             {
     "order": [],
     "aoColumnDefs": [
-      { "bSortable": false, "aTargets": [ 4 ] }
-    ]
+      { "bSortable": false, "aTargets": [ 4 ] ,
+         "sWidth": "111px", "aTargets": [4] 
+      }
+
+    ],
             }
           );
         });

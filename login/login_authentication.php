@@ -8,8 +8,11 @@ function test_input($data){
 }
 $email = test_input($_POST["email"]);
 $password = test_input($_POST["password"]);
+
+
 $sql = "SELECT password FROM employees WHERE email = '$email'";
 $result = $conn->query($sql);
+
 if ($result->num_rows == 0){
     echo "No user found. mail: $email password: $password";
 }
