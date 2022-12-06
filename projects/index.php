@@ -41,7 +41,7 @@
 </head>
 <body>
     <?php
-    include "../header.php";
+    include "../header/header.php";
     ?>
     <div id="page-content-wrapper">
         <div class="container-fluid">
