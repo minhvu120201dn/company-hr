@@ -16,11 +16,7 @@
       <div class="panel-body">
         <dl class="dl-horizontal">
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $db_name = "company-hr";
-$conn = new mysqli($servername, $username, $password, $db_name);
+        $conn = connect_to_database();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

@@ -148,7 +148,7 @@
                 <td><?php echo $a['task_end'] ?></td>
                 <td><?php echo $a['assign_user'] ?></td>
                 <td>
-                  <a class="fa fa-eye btn btn-info btn-sm" href=""></a>
+                  <a class="fa fa-eye btn btn-info btn-sm" href="details_tasks.php?id=<?php echo $a['id'] ?>"></a>
                   <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="delete_tasks.php?id=<?php echo $a['id'] ?>"></a>
                 </td>
