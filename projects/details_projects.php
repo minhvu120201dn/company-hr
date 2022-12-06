@@ -5,7 +5,7 @@
     ?>
 <script type="text/javascript">
   document.title = 'Project Detail';
-</script> 
+</script>
 <div class="row">
   <div class="col-lg-6">
     <section class="panel" style="box-shadow: none;">

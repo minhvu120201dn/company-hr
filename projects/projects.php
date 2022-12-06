@@ -5,7 +5,7 @@
 <script type="text/javascript">
   document.title = 'Projects';
 </script> 
-<div class="col-lg-12">
+<div class="container-fluid">
 <div class="row">
   <div class="col-lg-12">
     <section class="panel" style="box-shadow: none;">
