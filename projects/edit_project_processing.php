@@ -14,12 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $summery = $_POST['summery'];
         $details = $_POST['details'];
         $status = $_POST['prostatus'];
-        $sql = "UPDATE projects SET project_title='$title',project_summary='$summery' WHERE project_id='$id'";
+        $sql = "UPDATE projects SET project_title='$title',project_status='$status',project_start='$startdate',project_end='$enddate',project_details='$details',project_summary='$summery' WHERE project_id='$id'";
 
         if ($conn->query($sql) === TRUE) {
-            echo 'success';
+            header("Location: ../projects");
         }
-        else echo 'failed';
     }
     
 }

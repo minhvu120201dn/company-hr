@@ -24,9 +24,21 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../projects" class="nav-link text-white">
+                    <a href="http://localhost/Webpr/projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost/Webpr/projects/fields.php" class="nav-link text-white">
+                        <i class="fa-solid fa-folder"></i>
+                        Fields
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost/Webpr/projects/tasks.php" class="nav-link text-white">
+                        <i class="fa-solid fa-folder"></i>
+                        Tasks
                     </a>
                 </li>
             </ul>
