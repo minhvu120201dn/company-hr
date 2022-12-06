@@ -16,6 +16,24 @@
     
     <title>Company-HR</title>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Company-HR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="*/style.css">
+
+    <script src="https://kit.fontawesome.com/bd5d5fa01b.js" crossorigin="anonymous"></script>
+    
+    <title>Company-HR</title>
+</head>
 
 <body>
   <div class="bg-white mx-5">
@@ -26,6 +44,7 @@
             <span class="h1 fw-bold mb-0">Web Dev</span>
           </div>
           <div class="d-flex align-items-center ps-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+            <form style="width: 23rem;" action="login_authentication.php" method="post">
             <form style="width: 23rem;" action=".login_authentication.php" method="post">
               <h1 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h1>
               <div class="form-outline mb-4">
@@ -47,10 +66,12 @@
         </div>
         <div class="col-sm-6 d-flex flex-wrap align-items-center">
           <img src="login-img.png" alt="Login image" class="img-fluid mx-auto d-block">
+          <img src="login-img.png" alt="Login image" class="img-fluid mx-auto d-block">
         </div>
       </div>
     </div>
 </body>
+</html>
 </html>
 
 <script>
