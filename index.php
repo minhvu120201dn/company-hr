@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['loggedin'])){
+        header("Location: ./login/login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,13 +24,9 @@
 </head>
 <body>
     <?php
-        include './utils.php';
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+            include './utils.php';
             include "header.php";
             include "dashboard.php";
-        }
-        else
-            include "./login/login.php";
     ?>
 
     <script src="script.js"></script>
