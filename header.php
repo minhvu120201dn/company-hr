@@ -7,25 +7,25 @@
         <div class="offcanvas-body">
             <ul class="nav nav-pills flex-sm-column mb-auto">
                 <li>
-                    <a href="#" class="nav-link text-white">
+                    <a href="index.php?page=dashboard" class="nav-link text-white">
                         <i class="fa-solid fa-chart-line"></i>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="employees" class="nav-link text-white">
+                    <a href="index.php?page=employee" class="nav-link text-white">
                         <i class="fa-solid fa-users"></i>
                         Employees
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
+                    <a href="index.php?page=department" class="nav-link text-white">
                         <i class="fa-solid fa-building"></i>
                         Department
                     </a>
                 </li>
                 <li>
-                    <a href="projects" class="nav-link text-white">
+                    <a href="index.php?page=projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
                     </a>

@@ -16,6 +16,30 @@
     <?php
         include "header.php";
     ?>
+    <?php
+        if(!isset($_GET['page'])) require 'login/login.php';
+        else {
+            switch ($_GET['page']) {
+                case 'dashboard': {
+                    include 'dashboard.php';
+                    break;
+                }
+                case 'projects': {
+                    include 'projects/projects.php';
+                    break;
+                }
+                case 'employee': {
+                    include 'employees/signup.php';
+                    break;
+                }
+                case 'login_authentication': {
+                    include 'login/login_authentication.php';
+                    break;
+                }
+            }
+        }
+        
+    ?>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
