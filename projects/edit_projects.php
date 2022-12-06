@@ -16,11 +16,7 @@
       <div class="panel-body">
         <dl class="dl-horizontal">
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $db_name = "company-hr";
-$conn = new mysqli($servername, $username, $password, $db_name);
+$conn =  connect_to_database();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -30,7 +26,7 @@ if ($conn->connect_error) {
           $conn->close();
           foreach ($result as $a) {
             ?>
-    <form method="post" action="./edit_processing.php?id=<?php echo $a['project_id'] ?>" >
+    <form method="post" action="./edit_project_processing.php?id=<?php echo $a['project_id'] ?>" >
         <dt >Id</dt><dd><?php echo $id ?></dd>
           <dt style="margin-top: 6px;">Name</dt><dd><input type="text" name="protitle" class="form-control" id="recipient-name1" minlength="8" maxlength="250" value="<?php echo $a['project_title'] ?>" ></dd>
           <dt style="margin-top: 6px;">Status</dt><dd><select class="form-control custom-select valid" tabindex="1" name="prostatus">
