@@ -1,5 +1,11 @@
+<style>
+
+.nav-link {
+    font-size: 25px;
+}
+</style>
 <div class="container-fluid px-0">
-    <div class="offcanvas offcanvas-start offcanvas-sm bg-dark" id="sidebar">
+    <div class="offcanvas offcanvas-start bg-dark" id="sidebar" style="width: 300px">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title text-white">Sidebar</h1>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
@@ -54,7 +60,7 @@
         <li><a href="#" class="nav-link text-white">Features</a></li>
         <li><a href="#" class="nav-link text-white">About</a></li> -->
     </ul>
-    <div class="col-sm-3 text-end dropdown">
+    <div class="btn-group" role="group">
         <button type="button" class="btn btn-outline-light me-2 dropdown-toggle" data-bs-toggle="dropdown">
             <i class="fa-solid fa-user"></i>
             <?php echo $_SESSION['username'];?>
