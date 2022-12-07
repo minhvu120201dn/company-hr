@@ -13,10 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id1 = $_POST['proid1'];
         $sql = "UPDATE departments SET department_name = '$title' WHERE department_id = '$id'";
         $sql1 = "SELECT * FROM departments WHERE department_name='$title'";
-        $sql3 = "SELECT * FROM employees WHERE employee_id='" . implode(', ',$id1) . "'";
-        $sql2 = "SELECT * FROM employees WHERE employee_id='$assign'";
-        $result = $conn->query($sql2); 
-        $result1 = $conn->query($sql3); 
         $result2 = $conn->query($sql1); 
         if($assign != Null){
                 foreach ($result2 as $b) {
@@ -29,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             }
         }
-        elseif($id1 != Null){
+        else{
                 foreach ($result2 as $b) {
                 $ids = $b['department_id'];
                 if ($conn->query($sql) === TRUE) {
-                $sql4 = "UPDATE employees_in_departments SET employee_id='" . implode(', ',$id1) . "' ,is_manager= '0' WHERE department_id = '$id'";
+                    $sql4 = "UPDATE employees_in_departments SET employee_id='" . implode(', ',$id1) . "' ,is_manager= '0' WHERE department_id = '$id'";
                 if ($conn->query($sql4) === TRUE) {
                     header("Location: ../department");}
                 }
