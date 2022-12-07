@@ -32,6 +32,7 @@
 </head>
 <body>
     <?php
+    session_start();
     include "../header.php";
     ?>
     <div id="page-content-wrapper">
