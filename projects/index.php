@@ -22,6 +22,7 @@ include "../header.php";
                     include('./fields.php');
                     break;
             }
+        }
         ?>
     </div>
 </div>
