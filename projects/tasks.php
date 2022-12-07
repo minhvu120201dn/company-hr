@@ -2,7 +2,7 @@
 
     include "./header.php";
     include "../utils.php";
-    ?>
+  ?>
 <script type="text/javascript">
   document.title = 'Tasks';
 </script> 
