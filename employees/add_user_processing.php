@@ -4,14 +4,15 @@ include "../utils.php";
 
 $conn = connect_to_database();
 
-//$requirements = ["first-name", "middle-name", "last-name", "avatar", "date-of-birth", "department", "role", "email", "phone-number", "notes"];
-
+//$requirements = ["first-name", "middle-name", "last-name", "avatar", "date-of-birth", "department-id", "role", "email", "phone-number", "notes"];
+// if (all_requirements_are_set($requirements)) {
 function validate($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
+// }
 
 $first_name = validate($_POST["first-name"]);
 $middle_name = validate($_POST["middle-name"]);
@@ -21,8 +22,15 @@ $birth = validate($_POST["date-of-birth"]);
 $department_id = validate($_POST["department-id"]);
 $role = validate($_POST["role"]);
 $email = validate($_POST["email"]);
+$password = validate($_POST["password"]);
+$confirm_password = validate($_POST["confirm-password"]);
 $phone_number = validate($_POST["phone-number"]);
 $notes = validate($_POST["notes"]);
+
+if ($password != $confirm_password) {
+    header("Location: ./?error=");
+    exit();
+}
 
 // if (isset($_FILES["avatar"])) {
 //     $img_file = $_FILES["avatar"];
@@ -70,19 +78,13 @@ else {
     $file_name_new = "NULL";
 }
 
-$sql = "UPDATE employees SET
-            first_name='$first_name',
-            middle_name='$middle_name',
-            last_name='$last_name',
-            -- avatar='$avatar',
-            birth='$birth',
-            department_id='$department_id',
-            role='$role',
-            notes='$notes'
-        WHERE email='$email'";
+$password_hash = password_hash($password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO employees (email, first_name, middle_name, last_name, birth, password, department_id, role, notes)
+        VALUES
+            ('$email', '$first_name', '$middle_name', '$last_name', '$birth', '$password_hash', $department_id, '$role', '$notes')";
 
 if (!mysqli_query($conn, $sql)) {
-    header("Location: ./?error=");
+    header("Location: ./?error");
     exit();
 }
 else {

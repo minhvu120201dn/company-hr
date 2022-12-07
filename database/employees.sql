@@ -7,7 +7,7 @@ CREATE TABLE employees(
     last_name VARCHAR(255) NOT NULL,
     avatar VARCHAR(255) DEFAULT NULL,
     birth DATE NOT NULL,
-    department VARCHAR(255) NOT NULL,
+    department_id INT NOT NULL,
     role VARCHAR(255) NOT NULL,
     phone_number VARCHAR(255) NOT NULL,
     notes TEXT DEFAULT NULL
@@ -19,9 +19,9 @@ CREATE TABLE employees(
     email: phong@gmail.com password: phong
     email: huan@gmail.com password: huan   
 */
-INSERT INTO employees(email, password, first_name, middle_name, last_name, avatar, birth, department, role, phone_number, notes)
-VALUES  ('admin@gmail.com', '$2y$10$Ttm.9G8PJ2DhDVAyzDsnh.zihfpTej9KQtBlMGzb4.03F8opNF7MS', 'admin', 'admin', 'admin', NULL, '2022-1-1', 'admin', 'admin', '1234567890', NULL),
-        ('thanh@gmail.com', '$2y$10$qm6uuAbveG8MTI6wRp6XHOwbR/bF3HG4fn86bgjqEsV/h06jsUVyy', 'Nguyen', 'Duy', 'Thanh', NULL, '2001-1-1', 'Human Resources', 'Employee', '000000001', NULL),
-        ('vu@gmail.com', '$2y$10$8pqufKhp2JhTWz.JfSwy/eHJlbk3f.XHuuZ8UoyDBkdIdgwL3uUri', 'Ly', 'Kim', 'Phong', NULL, '2001-8-23', 'IT', 'Manager', '09123564894', NULL),
-        ('phong@gmail.com', '$2y$10$IzwHz8gHHFZoAeZFJY0zNOXFMIfaocALMrcykiXq8j.aJ5O/5MPIm', 'Tran', 'Minh', 'Vu', NULL, '2002-2-6', 'Finance', 'Manager', '1591498156', NULL),
-        ('huan@gmail.com', '$2y$10$qlGVpjBDq.wqKeF2TMDQQekippVJnPoDAtb3yMaByr1SAfLyB/xVK', 'Cao', 'Anh', 'Huan', NULL, '2001-6-30', 'Logistic', 'Manager', '156176850', NULL);
+INSERT INTO employees(email, password, first_name, middle_name, last_name, avatar, birth, department_id, role, phone_number, notes)
+VALUES  ('admin@gmail.com', '$2y$10$Ttm.9G8PJ2DhDVAyzDsnh.zihfpTej9KQtBlMGzb4.03F8opNF7MS', 'admin', 'admin', 'admin', NULL, '2022-1-1', '1', 'admin', '1234567890', NULL),
+        ('thanh@gmail.com', '$2y$10$qm6uuAbveG8MTI6wRp6XHOwbR/bF3HG4fn86bgjqEsV/h06jsUVyy', 'Nguyen', 'Duy', 'Thanh', NULL, '2001-1-1', '1', 'Employee', '000000001', NULL),
+        ('vu@gmail.com', '$2y$10$8pqufKhp2JhTWz.JfSwy/eHJlbk3f.XHuuZ8UoyDBkdIdgwL3uUri', 'Ly', 'Kim', 'Phong', NULL, '2001-8-23', 'IT', '2', '09123564894', NULL),
+        ('phong@gmail.com', '$2y$10$IzwHz8gHHFZoAeZFJY0zNOXFMIfaocALMrcykiXq8j.aJ5O/5MPIm', 'Tran', 'Minh', 'Vu', NULL, '2002-2-6', '3', 'Manager', '1591498156', NULL),
+        ('huan@gmail.com', '$2y$10$qlGVpjBDq.wqKeF2TMDQQekippVJnPoDAtb3yMaByr1SAfLyB/xVK', 'Cao', 'Anh', 'Huan', NULL, '2001-6-30', '4', 'Manager', '156176850', NULL);
