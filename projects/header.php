@@ -1,3 +1,10 @@
+<?php
+    if (!isset($_SESSION['loggedin'])){
+        header("Location: ../login/login.php");
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,20 +28,18 @@
     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables_themeroller.css">
-    <script src="./public/js/bootstrap.min1.js"></script>
     <script src="./public/js/bootstrap.min.js"></script>
     <script src="./public/js/dataTables.bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="./public/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="./public/js/jquery.dataTables.js"></script>  
-    <link rel="stylesheet" type="text/css" href="./public/css/select2.min.css">
-    <script type="text/javascript" charset="utf8" src="./public/js/select2.full.min.js"></script>  
+    <script type="text/javascript" charset="utf8" src="./public/js/jquery.dataTables.js"></script>
 
-
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <title>
-   
     </title>
 </head>
+
 <body>
 </body>
 </html>

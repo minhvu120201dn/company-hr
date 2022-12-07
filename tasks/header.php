@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if (!isset($_SESSION['loggedin'])){
         header("Location: ../login/login.php");
     }
@@ -33,7 +32,8 @@
     <script src="./public/js/dataTables.bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="./public/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="./public/js/jquery.dataTables.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="./public/css/select2.min.css">
+    <script type="text/javascript" charset="utf8" src="./public/js/select2.full.min.js"></script>  
     <script src="../script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -42,15 +42,5 @@
 </head>
 
 <body>
-    <?php
-    include "../header.php";
-    ?>
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <?php
-            include "employees.php";
-            ?>
-        </div>
-    </div>
 </body>
 </html>
