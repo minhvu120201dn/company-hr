@@ -21,6 +21,7 @@ include "../header.php";
                 case 'fields':
                     include('./fields.php');
                     break;
+            }
         ?>
     </div>
 </div>
