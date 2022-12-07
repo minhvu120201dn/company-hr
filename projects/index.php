@@ -11,7 +11,6 @@ include "../header.php";
 <div id="page-content-wrapper">
     <div class="container-fluid">
         <?php
-        session_start();
         if(!isset($_GET['page'])){
             include('./projects.php');
         }
