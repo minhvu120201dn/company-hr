@@ -1,3 +1,4 @@
+<div class="container-fluid px-0">
     <div class="offcanvas offcanvas-start offcanvas-sm bg-dark" id="sidebar">
         <div class="offcanvas-header">
             <h1 class="offcanvas-title text-white">Sidebar</h1>
@@ -24,19 +25,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/Webpr/projects" class="nav-link text-white">
+                    <a href="./projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/Webpr/projects/fields.php" class="nav-link text-white">
+                    <a href="./fields" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Fields
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/Webpr/projects/tasks.php" class="nav-link text-white">
+                    <a href="./projects/tasks" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Tasks
                     </a>
