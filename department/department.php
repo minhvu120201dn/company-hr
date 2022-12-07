@@ -3,9 +3,6 @@
 
     include "./header.php";
     include "../utils.php";
-    if (!isset($_SESSION['loggedin'])){
-        header("Location: ../login/login.php");
-    }
     ?>
 <script type="text/javascript">
   document.title = 'Departments';
@@ -119,7 +116,7 @@
                   echo  $c['first_name'] ;
                 else echo  "Null"; ?></td>
                 <td>
-                  <a class="fa fa-eye btn btn-info btn-sm" href=""></a>
+                  <a class="fa fa-eye btn btn-info btn-sm" href="details_department.php?id=<?php echo $a['department_id'] ?>"></a>
                   <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="delete_department.php?id=<?php echo $a['department_id'] ?>"></a>
                 </td>
