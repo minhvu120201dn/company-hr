@@ -84,7 +84,7 @@
                          if ($conn->connect_error) {
                              die("Connection failed: " . $conn->connect_error);
                          }
-                           $sql1 = "SELECT * FROM employees";
+                           $sql1 = "SELECT * FROM employees WHERE role='Employee'";
                            $result1 = $conn->query($sql1);
           foreach ($result1 as $a) { 
               ?>
