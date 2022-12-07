@@ -4,7 +4,7 @@ include "../utils.php";
 
 $conn = connect_to_database();
 
-//$requirements = ["first-name", "middle-name", "last-name", "avatar", "date-of-birth", "department", "role", "email", "phone-number", "notes"];
+//$requirements = ["first-name", "middle-name", "last-name", "avatar", "date-of-birth", "department-id", "role", "email", "phone-number", "notes"];
 // if (all_requirements_are_set($requirements)) {
 function validate($data) {
     $data = trim($data);
@@ -19,7 +19,7 @@ $middle_name = validate($_POST["middle-name"]);
 $last_name = validate($_POST["last-name"]);
 // $avatar = validate($_POST["avatar"]);
 $birth = validate($_POST["date-of-birth"]);
-$department = validate($_POST["department"]);
+$department_id = validate($_POST["department-id"]);
 $role = validate($_POST["role"]);
 $email = validate($_POST["email"]);
 $password = validate($_POST["password"]);
@@ -79,9 +79,9 @@ else {
 }
 
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
-$sql = "INSERT INTO employees (email, first_name, middle_name, last_name, birth, password, department, role, notes)
+$sql = "INSERT INTO employees (email, first_name, middle_name, last_name, birth, password, department_id, role, notes)
         VALUES
-            ('$email', '$first_name', '$middle_name', '$last_name', '$birth', '$password_hash', '$department', '$role', '$notes')";
+            ('$email', '$first_name', '$middle_name', '$last_name', '$birth', '$password_hash', $department_id, '$role', '$notes')";
 
 if (!mysqli_query($conn, $sql)) {
     header("Location: ./?error");

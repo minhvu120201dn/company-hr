@@ -1,5 +1,8 @@
 <?php
 include "../utils.php";
+$conn = connect_to_database();
+$emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id");
+$dep_list = $conn->query("SELECT * FROM departments");
 ?>
 <script type="text/javascript">
   document.title = 'Employees';
@@ -56,10 +59,13 @@ include "../utils.php";
                     <div class="row g-3 mb-3">
                         <div class="col">
                             <label class="form-label">Department <label style="color:red">*</label></label>
-                            <select class="form-select" name="department" required>
+                            <select class="form-select" name="department-id" required>
                                 <option selected></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                                <?php
+                                foreach ($dep_list as $dep) {?>
+                                    <option value="<?php echo $dep["department_id"]?>"><?php echo $dep["department_name"]?></option>
+                                <?php }
+                                ?>
                             </select>
                         </div>
                         <div class="col">
@@ -120,18 +126,15 @@ include "../utils.php";
         </thead>
         <tbody>
             <?php
-            $conn = connect_to_database();
-            $sql = "SELECT * FROM employees ORDER BY email";
-            $emp_list = $conn->query($sql);
             $id = 0;
-            foreach ($emp_list as $emp) { ?>
+            foreach ($emp_list as $emp) {?>
                 <tr>
                     <td><?php echo $emp["first_name"] ?></td>
                     <td><?php echo $emp["middle_name"] ?></td>
                     <td><?php echo $emp["last_name"] ?></td>
                     <td><?php echo $emp["birth"] ?></td>
                     <td><?php echo $emp["email"] ?></td>
-                    <td><?php echo $emp["department"] ?></td>
+                    <td><?php echo $emp["department_name"] ?></td>
                     <td><?php echo $emp["role"] ?></td>
                     <td><?php echo $emp["phone_number"] ?></td>
                     <td>                       
@@ -174,16 +177,18 @@ include "../utils.php";
                                             <div class="row g-3 mb-3">
                                                 <div class="col">
                                                     <label class="form-label">Department <label style="color:red">*</label></label>
-                                                    <select class="form-select" name="department" required>
-                                                        <option selected></option>
-                                                        <option value=""></option>
-                                                        <option value=""></option>
+                                                    <select class="form-select" name="department-id" required>
+                                                        <?php
+                                                        foreach ($dep_list as $dep) {?>
+                                                            <option value="<?php echo $dep["department_id"]?>" <?php if ($dep["department_id"] == $emp["department_id"]) echo "selected";?>><?php echo $dep["department_name"]?></option>
+                                                        <?php }
+                                                        ?>
                                                     </select>
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Role <label style="color:red">*</label></label>
                                                     <select class="form-select" name="role" required>
-                                                        <option value="<?php echo $emp["role"] ?>" selected><?php echo $emp["role"] ?></option>
+                                                        <option value="<?php echo $emp["role"]?>" selected><?php echo $emp["role"]?></option>
                                                         <option value="Manager">Manager</option>
                                                         <option value="Staff">Staff</option>
                                                     </select>
