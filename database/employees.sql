@@ -7,11 +7,11 @@ CREATE TABLE employees(
     last_name VARCHAR(255) NOT NULL,
     avatar VARCHAR(255) DEFAULT NULL,
     birth DATE NOT NULL,
-    department_id VARCHAR(255) NOT NULL,
+    department VARCHAR(255) NOT NULL,
     role VARCHAR(255) NOT NULL,
     phone_number VARCHAR(255) NOT NULL,
     notes TEXT DEFAULT NULL
-) AUTO_INCREMENT=0;
+) AUTO_INCREMENT = 0;
 
 /*  email: admin@gmail.com password: admin 
     email: thanh@gmail.com password: thanh
