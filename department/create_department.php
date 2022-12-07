@@ -17,26 +17,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $conn->query($sql2); 
         $result1 = $conn->query($sql3); 
         $result2 = $conn->query($sql1); 
-        if($assign){
-            foreach ($result as $a) {
+        if($assign != Null){
                 foreach ($result2 as $b) {
                 $ids = $b['department_id'];
                 if ($conn->query($sql) === TRUE) {
                     $sql4 = "INSERT INTO employees_in_departments (employee_id,department_id,is_manager) VALUES ('" . implode(', ',$assign) . "','$ids','1')";
-                    header("Location: ./department");
+                    if ($conn->query($sql4) === TRUE) {
+                    header("Location: ../department");}
                 }
-            }
+            
             }
         }
-        elseif($id){
-            foreach ($result1 as $a) {
+        elseif($id != Null){
                 foreach ($result2 as $b) {
                 $ids = $b['department_id'];
                 if ($conn->query($sql) === TRUE) {
-                    $sql4 = "INSERT INTO employees_in_departments (employee_id,department_id,is_manager) VALUES ('$id','$ids','0')";
-                    header("Location: ./department");
+                $sql4 = "INSERT INTO employees_in_departments (employee_id,department_id,is_manager) VALUES ('$id','$ids','0')";
+                if ($conn->query($sql4) === TRUE) {
+                    header("Location: ../department");}
                 }
-            }
+            
             }
     }
         

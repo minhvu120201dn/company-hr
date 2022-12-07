@@ -8,14 +8,14 @@
     }
     ?>
 <script type="text/javascript">
-  document.title = 'Tasks';
+  document.title = 'Departments';
 </script> 
 <div class="col-lg-12">
 <div class="row">
   <div class="col-lg-12">
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
-        <h1>Tasks</h1>
+        <h1>Departments</h1>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" style="display: none;">
             <div class="modal-dialog" role="document" >
@@ -79,7 +79,6 @@
               </div>
             </div>
           </div>
-          <a href="http://localhost/Webpr/projects" class="btn btn-success">Projects</a>
       </header>
       <div class="panel-body">
         <table id="service_table" class="display">
@@ -122,7 +121,7 @@
                 <td>
                   <a class="fa fa-eye btn btn-info btn-sm" href=""></a>
                   <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
-                  <a class="fa fa-trash btn btn-danger btn-sm" href=""></a>
+                  <a class="fa fa-trash btn btn-danger btn-sm" href="delete_department.php?id=<?php echo $a['department_id'] ?>"></a>
                 </td>
           
               </tr>
