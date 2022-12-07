@@ -24,10 +24,37 @@
 </head>
 <body>
     <?php
-        include 'utils.php';
+        include './utils.php';
         include "header.php";
-        include "dashboard.php";
+    ?>
 
+    <?php
+        if(!isset($_GET['page'])){
+            include('dashboard/dashboard.php');
+        }
+        else {
+            switch($_GET['page'])
+            {
+                case 'dashboard':
+                    include('dashboard/dashboard.php');
+                    break;
+                case 'employees':
+                    include('employees/signup.php');
+                    break;
+                case 'department':
+                    include('projects/projects.php');
+                    break;   
+                case 'projects':
+                    include('projects/projects.php');
+                    break;
+                case 'tasks':
+                    include('projects/tasks.php');
+                    break;
+                case 'fields':
+                    include('projects/fields.php');
+                    break;
+            }
+        }
     ?>
     <script src="script.js"></script>
 </body>
