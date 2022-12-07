@@ -1,5 +1,11 @@
-<style>
+<?php
+    session_start();
+    if (!isset($_SESSION['loggedin'])){
+        header("Location: ../login/login.php");
+    }
+?>
 
+<style>
 .nav-link {
     font-size: 25px;
 }
@@ -13,37 +19,37 @@
         <div class="offcanvas-body">
             <ul class="nav nav-pills flex-sm-column mb-auto">
                 <li>
-                    <a href="index.php?page=dashboard" class="nav-link text-white">
+                    <a href="../dashboard" class="nav-link text-white">
                         <i class="fa-solid fa-chart-line"></i>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=employees" class="nav-link text-white">
+                    <a href="../employees" class="nav-link text-white">
                         <i class="fa-solid fa-users"></i>
                         Employees
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=department" class="nav-link text-white">
+                    <a href="#" class="nav-link text-white">
                         <i class="fa-solid fa-building"></i>
                         Department
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=projects" class="nav-link text-white">
+                    <a href="../projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=fields" class="nav-link text-white">
+                    <a href="../projects/?page=fields" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Fields
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?page=tasks" class="nav-link text-white">
+                    <a href="../projects/?page=tasks" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Tasks
                     </a>
@@ -67,7 +73,7 @@
         </button>
         <ul class="dropdown-menu bg-dark">
             <li><a class="dropdown-item text-white" href="#">Signed in as <?php echo $_SESSION['username'];?></a></li>
-            <li><a class="dropdown-item text-white" href="./logout/logout.php">Sign out</a></li>
+            <li><a class="dropdown-item text-white" href="../logout/logout.php">Sign out</a></li>
         </ul>
     </div>
     </header>
