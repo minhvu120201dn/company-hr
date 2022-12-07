@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['loggedin'])){
+        header("Location: ../login/login.php");
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +44,6 @@
 
 <body>
     <?php
-    //session_start();
     include "../header.php";
     ?>
     <div id="page-content-wrapper">

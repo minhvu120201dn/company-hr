@@ -1,10 +1,3 @@
-<?php
-    session_start();
-    if (!isset($_SESSION['loggedin'])){
-        header("Location: ../login/login.php");
-    }
-?>
-
 <style>
 .nav-link {
     font-size: 25px;

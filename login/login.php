@@ -57,7 +57,6 @@
               <div class="pt-1 mb-4">
                 <button type="submit" class="btn btn-primary btn-lg btn-block" type="button" name="login">Login</button>
               </div>
-              <div class="large mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></div>
             </form>
           </div>
         </div>
