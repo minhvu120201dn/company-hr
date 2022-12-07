@@ -24,7 +24,7 @@
 </head>
 <body>
     <?php
-        include './utils.php';
+        include 'utils.php';
         include "header.php";
         include "dashboard.php";
 
