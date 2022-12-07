@@ -3,9 +3,6 @@
 
     include "./header.php";
     include "../utils.php";
-    if (!isset($_SESSION['loggedin'])){
-        header("Location: ../login/login.php");
-    }
     ?>
 <script type="text/javascript">
   document.title = 'Tasks';
@@ -88,7 +85,7 @@
                            $result1 = $conn->query($sql1);
           foreach ($result1 as $a) { 
               ?>
-                          <option value="<?php echo $a['email'] ?>"><?php echo $a['first_name'] ?></option>          
+                          <option value="<?php echo $a['first_name'] ?>"><?php echo $a['first_name'] ?></option>          
                           <?php }?> 
                         </select>
                   </div>

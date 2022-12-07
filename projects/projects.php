@@ -2,9 +2,6 @@
 
     include "./header.php";
     include "../utils.php";
-    if (!isset($_SESSION['loggedin'])){
-        header("Location: ../login/login.php");
-    }
     ?>
 <script type="text/javascript">
   document.title = 'Projects';

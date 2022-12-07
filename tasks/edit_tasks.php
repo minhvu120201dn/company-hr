@@ -1,7 +1,6 @@
 <?php
     include "./header.php";
     include "../utils.php";
-    include "../header.php";
     ?>
 <script type="text/javascript">
   document.title = 'Change Task Detail';
@@ -11,7 +10,7 @@
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
         <h1>Change Task Detail</h1>
-        <a href="../projects" class="btn btn-success">Back</a>
+        <a href="../tasks" class="btn btn-success">Back</a>
       </header>
       <div class="panel-body">
         <dl class="dl-horizontal">
@@ -21,7 +20,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
     $id = $_GET['id'];
-    $sql = "SELECT * FROM tasks WHERE id='$id'";
+    $sql = "SELECT * FROM tasks WHERE task_id='$id'";
     $result = $conn->query($sql); 
           $conn->close();
           foreach ($result as $a) {
