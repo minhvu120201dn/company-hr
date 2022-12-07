@@ -25,9 +25,21 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../projects" class="nav-link text-white">
+                    <a href="./projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="./fields" class="nav-link text-white">
+                        <i class="fa-solid fa-folder"></i>
+                        Fields
+                    </a>
+                </li>
+                <li>
+                    <a href="./projects/tasks" class="nav-link text-white">
+                        <i class="fa-solid fa-folder"></i>
+                        Tasks
                     </a>
                 </li>
             </ul>
@@ -42,16 +54,14 @@
         <li><a href="#" class="nav-link text-white">Features</a></li>
         <li><a href="#" class="nav-link text-white">About</a></li> -->
     </ul>
-
     <div class="col-sm-3 text-end dropdown">
         <button type="button" class="btn btn-outline-light me-2 dropdown-toggle" data-bs-toggle="dropdown">
             <i class="fa-solid fa-user"></i>
-            My Account
+            <?php echo $_SESSION['username'];?>
         </button>
         <ul class="dropdown-menu bg-dark">
-            <li><a class="dropdown-item text-white" href="#">Sign in as <?php echo $_SESSION['username'];?></a></li>
-            <li><a class="dropdown-item text-white" href="#">Link 2</a></li>
-            <li><a class="dropdown-item text-white" href="#">Sign out</a></li>
+            <li><a class="dropdown-item text-white" href="#">Signed in as <?php echo $_SESSION['username'];?></a></li>
+            <li><a class="dropdown-item text-white" href="./logout/logout.php">Sign out</a></li>
         </ul>
     </div>
     </header>

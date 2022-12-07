@@ -7,13 +7,14 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /////   CONNNECT AND RETRIEVE DATA      /////
     if (isset($_POST['submit'])) {
+        $id = $_GET['id'];
         $title = $_POST['protitle'];
         $startdate = $_POST['startdate'];
         $enddate = $_POST['enddate'];
         $summery = $_POST['summery'];
         $details = $_POST['details'];
         $status = $_POST['prostatus'];
-        $sql = "INSERT INTO projects (project_title,project_status,project_start,project_end,project_details,project_summary) VALUES ('$title','$status','$startdate','$enddate','$details','$summery')";
+        $sql = "UPDATE projects SET project_title='$title',project_status='$status',project_start='$startdate',project_end='$enddate',project_details='$details',project_summary='$summery' WHERE project_id='$id'";
 
         if ($conn->query($sql) === TRUE) {
             header("Location: ../projects");

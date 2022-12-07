@@ -10,10 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $title = $_POST['protitle'];
         $startdate = $_POST['startdate'];
         $enddate = $_POST['enddate'];
-        $summery = $_POST['summery'];
-        $details = $_POST['details'];
+        $details = $_POST['summery'];
+        $assign = $_POST['proid'];
+        $id = $_POST['proid1'];
         $status = $_POST['prostatus'];
-        $sql = "INSERT INTO projects (project_title,project_status,project_start,project_end,project_details,project_summary) VALUES ('$title','$status','$startdate','$enddate','$details','$summery')";
+        $sql = "INSERT INTO tasks (project_id,task_title,assign_user,task_status,task_start,task_end,task_details) VALUES ('$id','$title','" . implode(', ',$assign) . "','$status','$startdate','$enddate','$details')";
 
         if ($conn->query($sql) === TRUE) {
             header("Location: ../projects");
