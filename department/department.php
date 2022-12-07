@@ -117,7 +117,7 @@
                 else echo  "Null"; ?></td>
                 <td>
                   <a class="fa fa-eye btn btn-info btn-sm" href="details_department.php?id=<?php echo $a['department_id'] ?>"></a>
-                  <a class="fa fa-pencil btn btn-warning btn-sm" href=""></a>
+                  <a class="fa fa-pencil btn btn-warning btn-sm" href="edit_department.php?id=<?php echo $a['department_id'] ?>"></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="delete_department.php?id=<?php echo $a['department_id'] ?>"></a>
                 </td>
           
