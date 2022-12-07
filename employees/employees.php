@@ -3,7 +3,15 @@ include "../utils.php";
 ?>
 <script type="text/javascript">
   document.title = 'Employees';
-</script> 
+  function matchPassword() {  
+    var pw1 = document.getElementById("password");  
+    var pw2 = document.getElementById("confirm-password");  
+    if(pw1 != pw2) {   
+        alert("Passwords do not match");
+    }
+  }
+</script>
+
 <div class="container-fluid">
 <div class="row">
   <div class="col-lg-12">
@@ -19,7 +27,7 @@ include "../utils.php";
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left:70%;">
                     <span aria-hidden="true">&times;</span></button>
               </div>
-              <form method="post" action="./create_projects.php" id="btnSubmit" enctype="multipart/form-data">
+              <form method="post" action="add_user_processing.php" id="btnSubmit" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="row g-3 mb-3">
                         <div class="col">
@@ -86,7 +94,7 @@ include "../utils.php";
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary" onclick="matchPassword()">Submit</button>
                 </div>
                 </form>
               </div>
