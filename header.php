@@ -60,7 +60,7 @@
         </button>
         <ul class="dropdown-menu bg-dark" style="width: 254.312px; height:76px; padding: 8px 0;">
             <li><a class="dropdown-item text-white" href="#" style=" font-size: 16px">Signed in as <?php echo $_SESSION['username'];?></a></li>
-            <li><a class="dropdown-item text-white" href="../logout/logout.php" style=" font-size: 16px">Sign out</a></li>
+            <li><a class="dropdown-item text-white" href="./logout/logout.php" style=" font-size: 16px">Sign out</a></li>
         </ul>
     </div>
     </header>
