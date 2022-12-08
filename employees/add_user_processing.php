@@ -79,9 +79,9 @@ else {
 }
 
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
-$sql = "INSERT INTO employees (email, first_name, middle_name, last_name, birth, password, department_id, role, notes)
+$sql = "INSERT INTO employees (email, first_name, middle_name, last_name, birth, password, department_id, role, phone_number, notes)
         VALUES
-            ('$email', '$first_name', '$middle_name', '$last_name', '$birth', '$password_hash', $department_id, '$role', '$notes')";
+            ('$email', '$first_name', '$middle_name', '$last_name', '$birth', '$password_hash', $department_id, '$role', '$phone_number', '$notes')";
 
 if (!mysqli_query($conn, $sql)) {
     header("Location: ./?error");

@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $assign = $_POST['proid'];
         $id1 = $_POST['proid1'];
         $status = $_POST['prostatus'];
-        $sql = "UPDATE tasks SET project_id= '$id1',task_title='$title',assign_user='" . implode(', ',$assign) . "',task_status='$status',task_start='$startdate',task_end='$enddate',task_details='$details' WHERE id='$id'";
+        $sql = "UPDATE tasks SET project_id= '$id1',task_title='$title',assign_user='" . implode(', ',$assign) . "',task_status='$status',task_start='$startdate',task_end='$enddate',task_details='$details' WHERE task_id='$id'";
 
         if ($conn->query($sql) === TRUE) {
             header("Location: ../tasks");

@@ -1,6 +1,5 @@
 <?php
 include "../utils.php";
-session_start();
 $conn = connect_to_database();
 if ($_SESSION["role"] === "Admin")
     $emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id");
@@ -80,8 +79,8 @@ $dep_list = $conn->query("SELECT * FROM departments");
                             <label class="form-label">Role <label style="color:red">*</label></label>
                             <select class="form-select" name="role">
                                 <option selected></option>
-                                <option value="1">Manager</option>
-                                <option value="2">Staff</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Staff">Staff</option>
                             </select>
                         </div>
                     </div>

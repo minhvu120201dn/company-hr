@@ -25,12 +25,12 @@ else {
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $email;
-        $_SESSION["employee_id"] = $result["employee_id"];
-        $_SESSION["first_name"] = $result["first_name"];
-        $_SESSION["middle_name"] = $result["middle_name"];
-        $_SESSION["last_name"] = $result["last_name"];
-        $_SESSION["department"] = $result["department"];
-        $_SESSION["role"] = $result["role"];
+        $_SESSION["employee_id"] = $user["employee_id"];
+        $_SESSION["first_name"] = $user["first_name"];
+        $_SESSION["middle_name"] = $user["middle_name"];
+        $_SESSION["last_name"] = $user["last_name"];
+        $_SESSION["department_id"] = $user["department_id"];
+        $_SESSION["role"] = $user["role"];
         header('Location: ./../index.php');
     }
 }

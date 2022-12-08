@@ -40,13 +40,13 @@
                         <i class="fa-solid fa-folder"></i>
                         Fields
                     </a>
-                </li>
+                </li> -->
                 <li>
-                    <a href="../projects/?page=tasks" class="nav-link text-white">
+                    <a href="../tasks" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Tasks
                     </a>
-                </li> -->
+                </li>
             </ul>
         </div>   
     </div>

@@ -10,8 +10,7 @@
                         </div>
 
                         <h4 class="text-dark ">Total Employees</h4>
-                        <p class="mb-0 text-dark">Monthly blog posts</p>
-                       
+                        <p> </p>
                     </div>
                     </a>
                 </div>
@@ -35,8 +34,7 @@
                             <i class="fas fa-pencil-alt text-info fa-3x me-4"></i>    
                         </div>
                         <h4 class="text-dark">Total Project</h4>
-                        <p class="mb-0 text-dark">Monthly blog posts</p>
-                        
+                        <p></p>
                     </div>
                     </a>
                 </div>
@@ -91,9 +89,9 @@
         <td><?php echo $a['task_end'] ?></td>
         <td><?php echo $a['assign_user'] ?></td>
         <td>
-            <a class="fa fa-eye btn btn-info btn-sm" href="../projects/details_tasks.php?id=<?php echo $a['id'] ?>"></a>
-            <a class="fa fa-pencil btn btn-warning btn-sm" href="../projects/edit_tasks.php?id=<?php echo $a['id'] ?>"></a>
-            <a class="fa fa-trash btn btn-danger btn-sm" href="../projects/delete_tasks.php?id=<?php echo $a['id'] ?>"></a>
+            <a class="fa fa-eye btn btn-info btn-sm" href="../tasks/details_tasks.php?id=<?php echo $a['task_id'] ?>"></a>
+            <a class="fa fa-pencil btn btn-warning btn-sm" href="../tasks/edit_tasks.php?id=<?php echo $a['task_id'] ?>"></a>
+            <a class="fa fa-trash btn btn-danger btn-sm" href="../tasks/delete_tasks.php?id=<?php echo $a['task_id'] ?>"></a>
         </td>
     
         </tr>
