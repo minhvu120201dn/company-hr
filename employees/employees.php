@@ -211,7 +211,11 @@ $dep_list = $conn->query("SELECT * FROM departments");
                                                 <label class="form-label">Notes</label>
                                                 <textarea class="form-control" id="notes" name="notes" rows="5" value="<?php echo $emp["notes"] ?>"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Update</button>
+                                            <?php
+                                            if ($_SESSION["role"] != "Staff") {?>
+                                                <button type="submit" class="btn btn-primary">Update</button>
+                                            <?php }
+                                            ?>
                                         </form>
                                     </div>
                                 </div>
