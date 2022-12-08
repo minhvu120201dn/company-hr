@@ -29,6 +29,7 @@
     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables_themeroller.css">
+    <script src="./public/js/bootstrap.min1.js"></script>
     <script src="./public/js/bootstrap.min.js"></script>
     <script src="./public/js/dataTables.bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="./public/css/jquery.dataTables.css">

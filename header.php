@@ -11,8 +11,8 @@
         </div>
         <div class="offcanvas-body">
             <ul class="nav nav-pills flex-sm-column mb-auto">
-            <li>
-                    <a href="#" class="nav-link text-white">
+                <li>
+                    <a href="../dashboard" class="nav-link text-white">
                         <i class="fa-solid fa-chart-line"></i>
                         Dashboard
                     </a>
@@ -24,23 +24,29 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./department/" class="nav-link text-white">
+                    <a href="../department/" class="nav-link text-white">
                         <i class="fa-solid fa-building"></i>
                         Department
                     </a>
                 </li>
                 <li>
-                    <a href="./projects" class="nav-link text-white">
+                    <a href="../projects" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Projects
                     </a>
                 </li>
+                <!-- <li>
+                    <a href="../projects/?page=fields" class="nav-link text-white">
+                        <i class="fa-solid fa-folder"></i>
+                        Fields
+                    </a>
+                </li>
                 <li>
-                    <a href="./tasks" class="nav-link text-white">
+                    <a href="../projects/?page=tasks" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Tasks
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>   
     </div>
@@ -58,9 +64,9 @@
             <i class="fa-solid fa-user"></i>
             <?php echo $_SESSION['username'];?>
         </button>
-        <ul class="dropdown-menu bg-dark" style="width: 254.312px; height:76px; padding: 8px 0;">
-            <li><a class="dropdown-item text-white" href="#" style=" font-size: 16px">Signed in as <?php echo $_SESSION['username'];?></a></li>
-            <li><a class="dropdown-item text-white" href="./logout/logout.php" style=" font-size: 16px">Sign out</a></li>
+        <ul class="dropdown-menu bg-dark">
+            <li><a class="dropdown-item text-white" href="#">Signed in as <?php echo $_SESSION['username'];?></a></li>
+            <li><a class="dropdown-item text-white" href="../logout/logout.php">Sign out</a></li>
         </ul>
     </div>
     </header>
