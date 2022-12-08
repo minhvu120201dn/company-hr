@@ -2,7 +2,7 @@
 include "../utils.php";
 session_start();
 $conn = connect_to_database();
-if ($_SESSION["role"] === "HR")
+if ($_SESSION["role"] === "Admin")
     $emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id");
 else
     $emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id AND employees.department_id = ".$_SESSION["department_id"]);
@@ -25,7 +25,11 @@ $dep_list = $conn->query("SELECT * FROM departments");
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
         <h1>Employees</h1>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
+          <?php          
+          if ($_SESSION["role"] === "Admin") {?>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
+          <?php }
+          ?>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" style="display: none;">
             <div class="modal-dialog" role="document" style="max-width:100%;width:700px">
               <div class="modal-content">
