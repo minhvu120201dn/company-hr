@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO tasks (project_id,task_title,assign_user,task_status,task_start,task_end,task_details) VALUES ('$id','$title','" . implode(', ',$assign) . "','$status','$startdate','$enddate','$details')";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location: ../projects");
+            header("Location: ../tasks");
         }
     }
     

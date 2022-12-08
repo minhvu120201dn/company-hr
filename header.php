@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
+                    <a href="../department/" class="nav-link text-white">
                         <i class="fa-solid fa-building"></i>
                         Department
                     </a>
@@ -35,7 +35,7 @@
                         Projects
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="../projects/?page=fields" class="nav-link text-white">
                         <i class="fa-solid fa-folder"></i>
                         Fields
@@ -46,7 +46,7 @@
                         <i class="fa-solid fa-folder"></i>
                         Tasks
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>   
     </div>
@@ -59,8 +59,8 @@
         <li><a href="#" class="nav-link text-white">Features</a></li>
         <li><a href="#" class="nav-link text-white">About</a></li> -->
     </ul>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-outline-light me-2 dropdown-toggle" data-bs-toggle="dropdown">
+    <div class="btn-group" role="group" style="width:203.113px; height:42px">
+        <button type="button" class="btn btn-outline-light me-2 dropdown-toggle" data-bs-toggle="dropdown" style="border-color: #f8f9fa;line-height:1.5;width:195.113px; height:38px; font-size: 15px;margin-top:2px">
             <i class="fa-solid fa-user"></i>
             <?php echo $_SESSION['username'];?>
         </button>

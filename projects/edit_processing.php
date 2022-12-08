@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "UPDATE projects SET project_title='$title',project_status='$status',project_start='$startdate',project_end='$enddate',project_details='$details',project_summary='$summery' WHERE project_id='$id'";
 
         if ($conn->query($sql) === TRUE) {
-            header("Location: ../projects");
+            header("Location: ../tasks");
         }
     }
     

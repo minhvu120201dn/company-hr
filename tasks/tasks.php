@@ -1,5 +1,6 @@
 <?php
 
+
     include "./header.php";
     include "../utils.php";
   ?>
@@ -14,7 +15,7 @@
         <h1>Tasks</h1>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog" role="document" >
               <div class="modal-content">
               <div class="modal-header" style="display: flex;justify-content: space-between;position: relative;align-items: center;">
                   <h4 class="modal-title" id="exampleModalLabel1" style="font-weight:700;font-size:20px;width:120px;"> Add Task</h4>
@@ -80,7 +81,7 @@
                          if ($conn->connect_error) {
                              die("Connection failed: " . $conn->connect_error);
                          }
-                           $sql1 = "SELECT * FROM employees";
+                           $sql1 = "SELECT * FROM employees WHERE role !='admin'";
                            $result1 = $conn->query($sql1);
           foreach ($result1 as $a) { 
               ?>
@@ -111,8 +112,7 @@
               </div>
             </div>
           </div>
-          <a href="?page=projects" class="btn btn-success">Projects</a>
-          <a href="?page=fields" class="btn btn-success">Fields</a>
+          <a href="http://localhost/Webpr/projects" class="btn btn-success">Projects</a>
       </header>
       <div class="panel-body">
         <table id="service_table" class="display">
@@ -149,9 +149,9 @@
                 <td><?php echo $a['task_end'] ?></td>
                 <td><?php echo $a['assign_user'] ?></td>
                 <td>
-                  <a class="fa fa-eye btn btn-info btn-sm" href="details_tasks.php?id=<?php echo $a['id'] ?>"></a>
-                  <a class="fa fa-pencil btn btn-warning btn-sm" href="edit_tasks.php?id=<?php echo $a['id'] ?>"></a>
-                  <a class="fa fa-trash btn btn-danger btn-sm" href="delete_tasks.php?id=<?php echo $a['id'] ?>"></a>
+                  <a class="fa fa-eye btn btn-info btn-sm" href="details_tasks.php?id=<?php echo $a['task_id'] ?>"></a>
+                  <a class="fa fa-pencil btn btn-warning btn-sm" href="edit_tasks.php?id=<?php echo $a['task_id'] ?>"></a>
+                  <a class="fa fa-trash btn btn-danger btn-sm" href="delete_tasks.php?id=<?php echo $a['task_id'] ?>"></a>
                 </td>
           
               </tr>
@@ -181,10 +181,10 @@
            $('#recipient-name').val($('#inputState').find(':selected').data('start')),
            $('#recipient-name1').val($('#inputState').find(':selected').data('end'))
           
-     })
+     }),
      $('#inputState1').select2({
       width: '100%'
-})
+});
 
 })
     </script>

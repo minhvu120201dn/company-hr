@@ -65,8 +65,7 @@
               </div>
             </div>
           </div>
-          <a href="?page=tasks" class="btn btn-success">Tasks</a>
-          <a href="?page=fields" class="btn btn-success">Fields</a>
+          <a href="http://localhost/Webpr/tasks" class="btn btn-success">Tasks</a>
       </header>
       <div class="panel-body">
         <table id="service_table" class="display">

@@ -1,7 +1,6 @@
 <?php
     include "./header.php";
     include "../utils.php";
-    include "../header.php";
     ?>
 <script type="text/javascript">
   document.title = 'Change Task Detail';
@@ -11,7 +10,7 @@
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
         <h1>Change Task Detail</h1>
-        <a href="../projects" class="btn btn-success">Back</a>
+        <a href="../tasks" class="btn btn-success">Back</a>
       </header>
       <div class="panel-body">
         <dl class="dl-horizontal">
@@ -21,7 +20,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
     $id = $_GET['id'];
-    $sql = "SELECT * FROM tasks WHERE id='$id'";
+    $sql = "SELECT * FROM tasks WHERE task_id='$id'";
     $result = $conn->query($sql); 
           $conn->close();
           foreach ($result as $a) {
@@ -37,9 +36,10 @@ if ($conn->connect_error) {
                           </select></dd>
             <dt style="margin-top: 6px;">Start Date</dt><dd><input type="text" name="startdate" class="form-control" id="recipient-name1"  value="<?php echo $a['task_start'] ?>" ></dd>
           <dt style="margin-top: 6px;">End Date</dt><dd><input type="text" name="enddate" class="form-control" id="recipient-name1"  value="<?php echo $a['task_end'] ?>" ></dd>
-          <dt style="margin-top: 6px;">Assined Employee</dt><dd><select class="select2 form-control custom-select col-md-4"   multiple="multiple" tabindex="1" name="proid[]" id="inputState1">    
-          <option value="<?php echo $a['assign_user'] ?>" selected="selected" hidden><?php echo $a['assign_user'] ?></option>
-          <?php
+          <dt style="margin-top: 6px;">Assigned Employee</dt><dd><select class="select2 form-control custom-select col-md-4"   multiple="multiple" tabindex="1" name="proid[]" id="inputState1">    
+          <?php foreach(explode(', ',$a['assign_user']) as $as){ ?>
+          <option value="<?php echo $as ?>" selected="selected" hidden><?php echo $as ?></option>
+          <?php }
                         $conn = connect_to_database();
                          if ($conn->connect_error) {
                              die("Connection failed: " . $conn->connect_error);

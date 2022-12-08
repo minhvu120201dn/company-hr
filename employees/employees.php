@@ -1,7 +1,11 @@
 <?php
 include "../utils.php";
+session_start();
 $conn = connect_to_database();
-$emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id");
+if ($_SESSION["role"] === "HR")
+    $emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id");
+else
+    $emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id AND employees.department_id = ".$_SESSION["department_id"]);
 $dep_list = $conn->query("SELECT * FROM departments");
 ?>
 <script type="text/javascript">
@@ -138,7 +142,8 @@ $dep_list = $conn->query("SELECT * FROM departments");
                     <td><?php echo $emp["role"] ?></td>
                     <td><?php echo $emp["phone_number"] ?></td>
                     <td>                       
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#emp<?php echo $id?>" >View</button>
+                        <button type="button" class="fa fa-eye btn btn-info btn-sm" data-toggle="modal" data-target="#emp<?php echo $id?>" ></button>
+                        <a type="button" class="fa fa-trash btn btn-danger btn-sm" href="delete_employee_processing.php?id=<?php echo $emp["employee_id"]?>" ></a>
                         <div class="modal fade" id="emp<?php echo $id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
@@ -188,9 +193,9 @@ $dep_list = $conn->query("SELECT * FROM departments");
                                                 <div class="col">
                                                     <label class="form-label">Role <label style="color:red">*</label></label>
                                                     <select class="form-select" name="role" required>
-                                                        <option value="<?php echo $emp["role"]?>" selected><?php echo $emp["role"]?></option>
-                                                        <option value="Manager">Manager</option>
-                                                        <option value="Staff">Staff</option>
+                                                        <!-- <option value="<?php echo $emp["role"]?>" selected><?php echo $emp["role"]?></option> -->
+                                                        <option value="Manager" <?php if ($emp["role"] === "Manager") echo "selected";?>>Manager</option>
+                                                        <option value="Staff" <?php if ($emp["role"] === "Staff") echo "selected";?>>Staff</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -206,7 +211,7 @@ $dep_list = $conn->query("SELECT * FROM departments");
                                                 <label class="form-label">Notes</label>
                                                 <textarea class="form-control" id="notes" name="notes" rows="5" value="<?php echo $emp["notes"] ?>"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-primary">Update</button>
                                         </form>
                                     </div>
                                 </div>

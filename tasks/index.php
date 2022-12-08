@@ -11,7 +11,7 @@ include "../header.php";
 <div id="page-content-wrapper">
     <div class="container-fluid">
         <?php
-            include('./projects.php');
+            include('./tasks.php');
         ?>
     </div>
 </div>
