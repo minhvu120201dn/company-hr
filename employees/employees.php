@@ -1,16 +1,35 @@
 <?php
 include "../utils.php";
+session_start();
+$conn = connect_to_database();
+if ($_SESSION["role"] === "Admin")
+    $emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id");
+else
+    $emp_list = $conn->query("SELECT * FROM employees JOIN departments WHERE employees.department_id = departments.department_id AND employees.department_id = ".$_SESSION["department_id"]);
+$dep_list = $conn->query("SELECT * FROM departments");
 ?>
 <script type="text/javascript">
   document.title = 'Employees';
-</script> 
+  function matchPassword() {  
+    var pw1 = document.getElementById("password");  
+    var pw2 = document.getElementById("confirm-password");  
+    if(pw1 != pw2) {   
+        alert("Passwords do not match");
+    }
+  }
+</script>
+
 <div class="container-fluid">
 <div class="row">
   <div class="col-lg-12">
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
         <h1>Employees</h1>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
+          <?php          
+          if ($_SESSION["role"] === "Admin") {?>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Create</button>
+          <?php }
+          ?>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" style="display: none;">
             <div class="modal-dialog" role="document" style="max-width:100%;width:700px">
               <div class="modal-content">
@@ -19,7 +38,7 @@ include "../utils.php";
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left:70%;">
                     <span aria-hidden="true">&times;</span></button>
               </div>
-              <form method="post" action="./create_projects.php" id="btnSubmit" enctype="multipart/form-data">
+              <form method="post" action="add_user_processing.php" id="btnSubmit" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="row g-3 mb-3">
                         <div class="col">
@@ -48,10 +67,13 @@ include "../utils.php";
                     <div class="row g-3 mb-3">
                         <div class="col">
                             <label class="form-label">Department <label style="color:red">*</label></label>
-                            <select class="form-select" name="department" required>
+                            <select class="form-select" name="department-id" required>
                                 <option selected></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                                <?php
+                                foreach ($dep_list as $dep) {?>
+                                    <option value="<?php echo $dep["department_id"]?>"><?php echo $dep["department_name"]?></option>
+                                <?php }
+                                ?>
                             </select>
                         </div>
                         <div class="col">
@@ -86,7 +108,7 @@ include "../utils.php";
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary" onclick="matchPassword()">Submit</button>
                 </div>
                 </form>
               </div>
@@ -112,22 +134,20 @@ include "../utils.php";
         </thead>
         <tbody>
             <?php
-            $conn = connect_to_database();
-            $sql = "SELECT * FROM employees ORDER BY email";
-            $emp_list = $conn->query($sql);
             $id = 0;
-            foreach ($emp_list as $emp) { ?>
+            foreach ($emp_list as $emp) {?>
                 <tr>
                     <td><?php echo $emp["first_name"] ?></td>
                     <td><?php echo $emp["middle_name"] ?></td>
                     <td><?php echo $emp["last_name"] ?></td>
                     <td><?php echo $emp["birth"] ?></td>
                     <td><?php echo $emp["email"] ?></td>
-                    <td><?php echo $emp["department"] ?></td>
+                    <td><?php echo $emp["department_name"] ?></td>
                     <td><?php echo $emp["role"] ?></td>
                     <td><?php echo $emp["phone_number"] ?></td>
                     <td>                       
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#emp<?php echo $id?>" >View</button>
+                        <button type="button" class="fa fa-eye btn btn-info btn-sm" data-toggle="modal" data-target="#emp<?php echo $id?>" ></button>
+                        <a type="button" class="fa fa-trash btn btn-danger btn-sm" href="delete_employee_processing.php?id=<?php echo $emp["employee_id"]?>" ></a>
                         <div class="modal fade" id="emp<?php echo $id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
@@ -166,18 +186,20 @@ include "../utils.php";
                                             <div class="row g-3 mb-3">
                                                 <div class="col">
                                                     <label class="form-label">Department <label style="color:red">*</label></label>
-                                                    <select class="form-select" name="department" required>
-                                                        <option selected></option>
-                                                        <option value=""></option>
-                                                        <option value=""></option>
+                                                    <select class="form-select" name="department-id" required>
+                                                        <?php
+                                                        foreach ($dep_list as $dep) {?>
+                                                            <option value="<?php echo $dep["department_id"]?>" <?php if ($dep["department_id"] == $emp["department_id"]) echo "selected";?>><?php echo $dep["department_name"]?></option>
+                                                        <?php }
+                                                        ?>
                                                     </select>
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Role <label style="color:red">*</label></label>
                                                     <select class="form-select" name="role" required>
-                                                        <option value="<?php echo $emp["role"] ?>" selected><?php echo $emp["role"] ?></option>
-                                                        <option value="Manager">Manager</option>
-                                                        <option value="Staff">Staff</option>
+                                                        <!-- <option value="<?php echo $emp["role"]?>" selected><?php echo $emp["role"]?></option> -->
+                                                        <option value="Manager" <?php if ($emp["role"] === "Manager") echo "selected";?>>Manager</option>
+                                                        <option value="Staff" <?php if ($emp["role"] === "Staff") echo "selected";?>>Staff</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -193,7 +215,11 @@ include "../utils.php";
                                                 <label class="form-label">Notes</label>
                                                 <textarea class="form-control" id="notes" name="notes" rows="5" value="<?php echo $emp["notes"] ?>"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <?php
+                                            if ($_SESSION["role"] != "Staff") {?>
+                                                <button type="submit" class="btn btn-primary">Update</button>
+                                            <?php }
+                                            ?>
                                         </form>
                                     </div>
                                 </div>

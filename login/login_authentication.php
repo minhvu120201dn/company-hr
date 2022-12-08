@@ -10,7 +10,7 @@ $email = test_input($_POST["email"]);
 $password = test_input($_POST["password"]);
 
 
-$sql = "SELECT password FROM employees WHERE email = '$email'";
+$sql = "SELECT * FROM employees WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0){
@@ -25,6 +25,12 @@ else {
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $email;
+        $_SESSION["employee_id"] = $result["employee_id"];
+        $_SESSION["first_name"] = $result["first_name"];
+        $_SESSION["middle_name"] = $result["middle_name"];
+        $_SESSION["last_name"] = $result["last_name"];
+        $_SESSION["department"] = $result["department"];
+        $_SESSION["role"] = $result["role"];
         header('Location: ./../index.php');
     }
 }
