@@ -29,7 +29,7 @@
       
                       <div class="form-group">
                         <label class="control-label">Department Name</label>
-                          <input type="text" name="detitle" class="form-control" id="recipient-name1" minlength="8" maxlength="250" placeholder="" required oninvalid="this.setCustomValidity('Please enter department name')" oninput="this.setCustomValidity('')">
+                          <input type="text" name="detitle" class="form-control" id="recipient-name1" minlength="0" maxlength="250" placeholder="" required oninvalid="this.setCustomValidity('Please enter department name')" oninput="this.setCustomValidity('')">
                       </div>
                    
                         <div class="form-group">
