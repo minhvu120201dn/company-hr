@@ -15,24 +15,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql1 = "SELECT * FROM departments WHERE department_name='$title'";
         $result2 = $conn->query($sql1); 
         if($assign != Null){
-                foreach ($result2 as $b) {
-                $ids = $b['department_id'];
+                
                 if ($conn->query($sql) === TRUE) {
+                    foreach ($result2 as $b) {
+                        $ids = $b['department_id'];
+                    }
                     $sql4 = "UPDATE employees_in_departments SET employee_id='$assign' ,is_manager= '1' WHERE department_id = '$id' ";
                     if ($conn->query($sql4) === TRUE) {
                     header("Location: ../department");}
-                }
+               
             
             }
         }
         else{
-                foreach ($result2 as $b) {
-                $ids = $b['department_id'];
+                
                 if ($conn->query($sql) === TRUE) {
+                    foreach ($result2 as $b) {
+                        $ids = $b['department_id'];
+                    }
                     $sql4 = "UPDATE employees_in_departments SET employee_id='" . implode(', ',$id1) . "' ,is_manager= '0' WHERE department_id = '$id'";
                 if ($conn->query($sql4) === TRUE) {
                     header("Location: ../department");}
-                }
+                
             
             }
     }
