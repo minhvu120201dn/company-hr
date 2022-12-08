@@ -1,16 +1,15 @@
 <?php
     include "./header.php";
-    include "../header.php";
     include "../utils.php";
     ?>
 <script type="text/javascript">
-  document.title = 'Department Detail';
+  document.title = 'Change Department Detail';
 </script>
 <div class="row">
   <div class="col-lg-6">
     <section class="panel" style="box-shadow: none;">
       <header class="panel-heading">
-        <h1>Department Detail</h1>
+        <h1>Change Department Detail</h1>
         <a href="../department" class="btn btn-success">Back</a>
       </header>
       <div class="panel-body">
